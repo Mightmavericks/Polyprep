@@ -127,47 +127,26 @@ include_once 'includes/header.php';
     <div class="card-body">
         <div class="notes-grid">
             <?php
-            // This would normally fetch recently approved notes from the database
-            // For now, we'll just display placeholder content
+            $recentNotes = getRecentlyApprovedNotes($_SESSION['user_id'], 3);
+            if (!empty($recentNotes)) {
+                foreach ($recentNotes as $note) {
+                    echo '<div class="card note-card">';
+                    echo '    <div class="note-thumbnail">';
+                    echo '        <img src="assets/images/pdf-icon.png" alt="PDF Icon">';
+                    echo '    </div>';
+                    echo '    <div class="note-info">';
+                    echo '        <h3 class="note-title">' . htmlspecialchars($note['title']) . '</h3>';
+                    echo '        <div class="note-meta">' . htmlspecialchars($note['course_name']) . ' • Semester ' . htmlspecialchars($note['semester_name']) . '</div>';
+                    echo '    </div>';
+                    echo '    <div class="note-actions">';
+                    echo '        <a href="' . htmlspecialchars($note['file_path']) . '" target="_blank" class="btn btn-primary btn-sm">View</a>';
+                    echo '    </div>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<div>No recently approved notes found.</div>';
+            }
             ?>
-            <div class="card note-card">
-                <div class="note-thumbnail">
-                    <img src="assets\images\pdf-icon.png" alt="PDF Icon">
-                </div>
-                <div class="note-info">
-                    <h3 class="note-title">Introduction to Programming</h3>
-                    <div class="note-meta">Computer Science • Semester 1</div>
-                </div>
-                <div class="note-actions">
-                    <a href="#" class="btn btn-primary btn-sm">View</a>
-                </div>
-            </div>
-            
-            <div class="card note-card">
-                <div class="note-thumbnail">
-                    <img src="assets\images\pdf-icon.png" alt="PDF Icon">
-                </div>
-                <div class="note-info">
-                    <h3 class="note-title">Data Structures</h3>
-                    <div class="note-meta">Computer Science • Semester 2</div>
-                </div>
-                <div class="note-actions">
-                    <a href="#" class="btn btn-primary btn-sm">View</a>
-                </div>
-            </div>
-            
-            <div class="card note-card">
-                <div class="note-thumbnail">
-                    <img src="assets\images\pdf-icon.png" alt="PDF Icon">
-                </div>
-                <div class="note-info">
-                    <h3 class="note-title">Digital Logic Design</h3>
-                    <div class="note-meta">Computer Science • Semester 1</div>
-                </div>
-                <div class="note-actions">
-                    <a href="#" class="btn btn-primary btn-sm">View</a>
-                </div>
-            </div>
         </div>
     </div>
 </div>

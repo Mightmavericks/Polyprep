@@ -342,3 +342,4 @@ function getBreadcrumb($items) {
     
     return $html;
 }
+require_once __DIR__ . '/get_recently_approved_notes.php';
