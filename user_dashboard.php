@@ -132,7 +132,7 @@ include_once 'includes/header.php';
             ?>
             <div class="card note-card">
                 <div class="note-thumbnail">
-                    <img src="assets/images/pdf-icon.png" alt="PDF Icon">
+                    <img src="assets\images\pdf-icon.png" alt="PDF Icon">
                 </div>
                 <div class="note-info">
                     <h3 class="note-title">Introduction to Programming</h3>
@@ -145,7 +145,7 @@ include_once 'includes/header.php';
             
             <div class="card note-card">
                 <div class="note-thumbnail">
-                    <img src="assets/images/pdf-icon.png" alt="PDF Icon">
+                    <img src="assets\images\pdf-icon.png" alt="PDF Icon">
                 </div>
                 <div class="note-info">
                     <h3 class="note-title">Data Structures</h3>
@@ -158,7 +158,7 @@ include_once 'includes/header.php';
             
             <div class="card note-card">
                 <div class="note-thumbnail">
-                    <img src="assets/images/pdf-icon.png" alt="PDF Icon">
+                    <img src="assets\images\pdf-icon.png" alt="PDF Icon">
                 </div>
                 <div class="note-info">
                     <h3 class="note-title">Digital Logic Design</h3>
