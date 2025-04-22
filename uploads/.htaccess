@@ -1,0 +1,19 @@
+# Deny direct access to directory listing
+Options -Indexes
+
+# Allow access to PDF files
+<Files ~ "\.pdf$">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# Deny access to all other file types
+<FilesMatch "^(?!.*\.pdf$).*$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Protect files from script execution
+<FilesMatch "\.(pdf)$">
+    SetHandler default-handler
+</FilesMatch>
